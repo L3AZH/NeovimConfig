@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
   }
 
   use "folke/tokyonight.nvim"
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}, {tag = 'v0.9.2'})
   use "tpope/vim-fugitive"
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -35,6 +35,11 @@ return require('packer').startup(function(use)
   }
   use 'rstacruz/vim-closer'
   use 'mfussenegger/nvim-dap'
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-	
+  use { 
+      "rcarriga/nvim-dap-ui", 
+      requires = {
+          {"mfussenegger/nvim-dap"},
+          {"nvim-neotest/nvim-nio"}, 
+      }
+  }	
 end)
